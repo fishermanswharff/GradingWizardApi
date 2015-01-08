@@ -10,7 +10,7 @@ deploy:
   provider: heroku
   app: gradingwizard
   api_key:
-    secure: aJH/1UV5EtTtGbJzQzpa8oEz8a8EDFkr4yOYTSwjkA8sZscVueRufAalwBG/VOBlJF3hGCqwuUzqCVTS98LbuMvnA0GhhjGPK0wKoJpBkiNO1WX1WxXs1PjQa5JqRdbNweOyu2GjLmtOJ8P4yNjmGABObZeQOiGNxzztdULr3Q0=
+    secure: KyMslgxGjYYwx3AKs/ZuAV1aOfXSXNSLSDuAMrAwTjQd2JV7cz+DkxVrOpGb/Xkzggq59ZFAtsTyn7j3+1JPLUgCfToafcoEWvsSRkrao+wi/MurQgm2hXmeEW8S73B+Msca4NoF2ppy9L2YA2hypZaO4P3a19JAvPc6uMN2j5c=
   run:
   - rake db:migrate
   - rake db:seed
