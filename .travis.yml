@@ -13,8 +13,6 @@ before_script:
 - gem install travis-artifacts
 - cp config/database.yml.travis config/database.yml
 - psql -c 'create database travis_ci_test' -U postgres
-- after_test:
-  - travis-artifacts upload --path logs --path artifacts/$TRAVIS_JOB_ID
 deploy:
   provider: heroku
   app: gradingwizard
