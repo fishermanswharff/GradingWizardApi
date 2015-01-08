@@ -17,8 +17,8 @@ deploy:
   - restart
 addons:
   artifacts:
-    access_key_id:
+    key:
       secure: "CSb5POQul6Of3kTxYS8ffE62GcbkmRmoj9wEseDLPvXv/cjcRUipTazwKmlnL6pWJa4GzN69wh9VNyU+3qO7cMpu60pOdbbqcYjaGdkofPXhrsSdLlmw16MgB3M+hQISQtfJCRasiWghY5l4Z1JLhIljs/RdZcUop+Agf1I9WPw="
-    secret_access_key:
+    secret:
       secure: "FE+fugsY4o7x2Vsh1/xGM73LwfwNPDubyNTg7Go5FNpns/sVjSsXBpYLSC7UWXU8OTEu+/Mtj2PFsHl+sq+Q/YMoqqEQHIKVeC9erI/pD5EPCg+0ZMlKYG1WVhrUxf42AY4sv1srHf04yBmEphnik+Q0dnrITSlIC7FtnTaUa/k="
     bucket: ga-wdi-travis-logs
