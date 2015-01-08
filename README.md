@@ -1,4 +1,4 @@
-![General Assembly Logo](http://i.imgur.com/ke8USTq.png)
+![General Assembly Logo](docs/img/GeneralAssembly_logo.png)
 
 # Todo list:
 * fix caching on production
