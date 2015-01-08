@@ -7,14 +7,6 @@ before_script:
 - gem install travis-artifacts
 - cp config/database.yml.travis config/database.yml
 - psql -c 'create database travis_ci_test' -U postgres
-addons:
-  artifacts:
-    debug: true
-    bucket: ga-wdi-travis-logs
-    key:
-      secure: Qm4b+i3Y5JUBlQlomL+B4IdE9i1tC8Vx6oh4eBzhzEHRhYDWsPhfY8rndNeh61LbdnHzlTJuASWe+HaPVTSCTg4o1lUG9cNheuwEKhMfZd5SJD+eC/QhXVi1nIfCHUdnFI0be0729PXZyJx7JLmhQdgelz5CydSSrpMkFE14b2A=
-    secret:
-      secure: Eep3s0KYkUZIt562vINYVFSi5a41GledkWeraW5nX3WGvpAAFg59u1Uj4ksWZ9yXiD+Q2rPDKs0nyX3bHfVgEVtCn4TvVtxBU5GaT4hpGyNzM23WX0J+MrhaUgHFsuYMBnH3h4Yo94fYhdJLO2XiAg7KfOJhfN47htebTMPca6E=
 deploy:
   provider: heroku
   app: gradingwizard
@@ -24,3 +16,10 @@ deploy:
   - rake db:migrate
   - rake db:seed
   - restart
+addons:
+  artifacts:
+    key:
+      secure: CSb5POQul6Of3kTxYS8ffE62GcbkmRmoj9wEseDLPvXv/cjcRUipTazwKmlnL6pWJa4GzN69wh9VNyU+3qO7cMpu60pOdbbqcYjaGdkofPXhrsSdLlmw16MgB3M+hQISQtfJCRasiWghY5l4Z1JLhIljs/RdZcUop+Agf1I9WPw=
+    secret:
+      secure: FE+fugsY4o7x2Vsh1/xGM73LwfwNPDubyNTg7Go5FNpns/sVjSsXBpYLSC7UWXU8OTEu+/Mtj2PFsHl+sq+Q/YMoqqEQHIKVeC9erI/pD5EPCg+0ZMlKYG1WVhrUxf42AY4sv1srHf04yBmEphnik+Q0dnrITSlIC7FtnTaUa/k=
+    bucket: ga-wdi-travis-logs
