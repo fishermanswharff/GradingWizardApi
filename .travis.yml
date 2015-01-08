@@ -4,8 +4,6 @@ rvm:
 script:
 - bundle exec rspec spec
 before_script:
-- gem install faraday --version 0.8.0 
-- "gem install travis-artifacts"
 - cp config/database.yml.travis config/database.yml
 - psql -c 'create database travis_ci_test' -U postgres
 deploy:
