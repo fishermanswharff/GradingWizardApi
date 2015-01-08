@@ -2,7 +2,6 @@
 
 # Todo list for this API:
 * new migrations
-* turn on travis ci
 * update git ignore
 * config env files
 * config initializers
