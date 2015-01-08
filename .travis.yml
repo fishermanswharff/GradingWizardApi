@@ -24,3 +24,11 @@ deploy:
   - rake db:migrate
   - rake db:seed
   - restart
+addons:
+  artifacts:
+    debug: true
+    bucket: "ga-wdi-travis-logs/artifacts"
+    secret:
+      secure: EmmLiXpnS2y5Nm1Mi83HJI7ZAtfGGTgadvFHNAgszrxYDxj+v4uICzNfZg1t5gPk1jhMpqdPZ/94JUzOPrzYvkQ+n5zqTDTDqiCNBSAqHh4wBhhdh8qQ9szIYJqz3apkmOw4dsNLINVYHbc9nk0HyY47gI/4w7nkJ7+wkX6z/ro=
+    key:
+      secure: V7eTwg944O+MXLJ7gAEQsaGj7k360LGBgsRVvWoiQIrvExTJmcLtzZuYE8g4tui4FyxoZu1zJoOcdrxmF/dSKec2lDFdunCFt0STR57dy6tz76MF60P48hD/tb4YxDzweIurEUUXuq5aSsLCZbCfzkJ+O4MsfWzHYQNudMx5cKM=
