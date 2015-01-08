@@ -1,16 +1,18 @@
 ![General Assembly Logo](docs/img/GeneralAssembly_logo.png)
 
-# Todo list:
+# Todo list for this API:
 * new migrations
 * turn on travis ci
-* update gemfile
 * update git ignore
 * config env files
 * config initializers
 * routes
 * test for repo model and controller
 * test for pull request model and repo
-* implement build artifacts post to AWS S3
+
+# Todo list for repo config:
+* output logs from rspec
+* config build artifacts post to AWS S3
 
 # Grading Wizard
 has a sole purpose: to receive Travis CI webhooks on automated builds, compile the results from repositories and produce an aggregated result of the builds from forks and master branches.
