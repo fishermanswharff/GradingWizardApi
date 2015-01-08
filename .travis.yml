@@ -18,7 +18,7 @@ deploy:
 addons:
   artifacts:
     key:
-      secure: CSb5POQul6Of3kTxYS8ffE62GcbkmRmoj9wEseDLPvXv/cjcRUipTazwKmlnL6pWJa4GzN69wh9VNyU+3qO7cMpu60pOdbbqcYjaGdkofPXhrsSdLlmw16MgB3M+hQISQtfJCRasiWghY5l4Z1JLhIljs/RdZcUop+Agf1I9WPw=
+      secure: Lk/Qf1Zp1J9QLU1WoR/dHH3AjOWQFYOoYfDvMEZ6bXVMBHkF/7M+UNVX6U/ECsfU53Dzu6LClRrGmbf9XTAmKZkAq+9Bo0Yri/B2IBwRk6ekNZiBsNLNSrZ2Oi3XtGfyO7OXJiaKkd686ReuMAzpHeVEla3N12T1kv733opZQj8=
     secret:
-      secure: FE+fugsY4o7x2Vsh1/xGM73LwfwNPDubyNTg7Go5FNpns/sVjSsXBpYLSC7UWXU8OTEu+/Mtj2PFsHl+sq+Q/YMoqqEQHIKVeC9erI/pD5EPCg+0ZMlKYG1WVhrUxf42AY4sv1srHf04yBmEphnik+Q0dnrITSlIC7FtnTaUa/k=
+      secure: bbc6WeoXJ4U3u+jvOCfIV+BdGPXTVoseScGDKQfIoKgCLGDhoda9S5oqzf4U4maw/C5/LxdZbMqGpP7yWiw2Y67dZa3jzo7UfJbEStlaMl5e+Wg6RsM+ksymz9oPfhQE2BVsG1leziOPl3KbkddNni9GVYk5nty9v/LKxgniiOg=
     bucket: ga-wdi-travis-logs
