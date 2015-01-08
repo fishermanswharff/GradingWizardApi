@@ -5,7 +5,6 @@
 * turn on travis ci
 * update gemfile
 * update git ignore
-* import env vars
 * config env files
 * config initializers
 * routes
