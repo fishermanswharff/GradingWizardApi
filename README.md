@@ -1,6 +1,16 @@
 ![General Assembly Logo](docs/img/GeneralAssembly_logo.png)
 
 # Todo list:
+* new migrations
+* turn on travis ci
+* update gemfile
+* update git ignore
+* import env vars
+* config env files
+* config initializers
+* routes
+* test for repo model and controller
+* test for pull request model and repo
 * implement build artifacts post to AWS S3
 
 # Grading Wizard
