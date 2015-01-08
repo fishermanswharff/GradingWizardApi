@@ -10,11 +10,11 @@ before_script:
 addons:
   artifacts:
     debug: true
-    bucket: ga-wdi-travis-logs/artifacts
+    bucket: ga-wdi-travis-logs
     key:
-      secure: RCdviNZ7hLeQU+iMgLp7fD0DIo1yBIp/ki/gkBehXKLzJcm+FmeaJu6FPJaQy20o4EBIhGWk3cTFI5LPufGe2sVCzBJHPEUuAR+DrIdAOwsYQtCkDB23FixjxnaqC66czZQtE1i4yq3qUBeVJjB+RyeTutOl6TZZUO3RaORHCzQ=
+      secure: Qm4b+i3Y5JUBlQlomL+B4IdE9i1tC8Vx6oh4eBzhzEHRhYDWsPhfY8rndNeh61LbdnHzlTJuASWe+HaPVTSCTg4o1lUG9cNheuwEKhMfZd5SJD+eC/QhXVi1nIfCHUdnFI0be0729PXZyJx7JLmhQdgelz5CydSSrpMkFE14b2A=
     secret:
-      secure: EqtRwclZJ2oTRan3Ov8nNSk+Iz7YQzqmHYtVMJuml7IKzjkm22RPNQvNP8flR2VFeANEGBVeRO365+olbPZgBi+CzsIQ7UwguOMdfCNbEwfWXqnX1W0zQmeqWwX1jbefId5YPdzUWmJHz6B+3q7vcTfqPZegJSYMR7nWE/W/aOk=
+      secure: Eep3s0KYkUZIt562vINYVFSi5a41GledkWeraW5nX3WGvpAAFg59u1Uj4ksWZ9yXiD+Q2rPDKs0nyX3bHfVgEVtCn4TvVtxBU5GaT4hpGyNzM23WX0J+MrhaUgHFsuYMBnH3h4Yo94fYhdJLO2XiAg7KfOJhfN47htebTMPca6E=
 deploy:
   provider: heroku
   app: gradingwizard
