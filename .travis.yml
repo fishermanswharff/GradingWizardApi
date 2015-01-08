@@ -12,9 +12,9 @@ addons:
     debug: true
     bucket: ga-wdi-travis-logs/artifacts
     key:
-      secure: WINimOmRSO8fDOAW2PCzbK+3WkrNIJ2BDnEmvf6HvVoy4/cVhnDnjWP64LLW/MB0yjOnjVPuMHdsHcbRmtlBzoM0Ea9Klb2x7XcdnFX9C+SImbSVlcz6+kfktl0vmGjK3pXUFAaArfU+/o7weoFsocw4ZaxTJpUjqY0rbwdTwIk=
+      secure: RCdviNZ7hLeQU+iMgLp7fD0DIo1yBIp/ki/gkBehXKLzJcm+FmeaJu6FPJaQy20o4EBIhGWk3cTFI5LPufGe2sVCzBJHPEUuAR+DrIdAOwsYQtCkDB23FixjxnaqC66czZQtE1i4yq3qUBeVJjB+RyeTutOl6TZZUO3RaORHCzQ=
     secret:
-      secure: GQuZ/1ZcN8cgWmFkADAiglQuGru+sji5jamPNkXEYZIuUN1mCBvHu1Opw2w8T96xZwbMIbTJoauCJlYGLw98MP2kCaE/NL+DpKVrm2kt2MiO3+tcFl3bvTAMxHYjHzho4OCQ2BZDWpecGqYeRVP36UkrthONR2l5bAG2Y+gkpoc=
+      secure: EqtRwclZJ2oTRan3Ov8nNSk+Iz7YQzqmHYtVMJuml7IKzjkm22RPNQvNP8flR2VFeANEGBVeRO365+olbPZgBi+CzsIQ7UwguOMdfCNbEwfWXqnX1W0zQmeqWwX1jbefId5YPdzUWmJHz6B+3q7vcTfqPZegJSYMR7nWE/W/aOk=
 deploy:
   provider: heroku
   app: gradingwizard
