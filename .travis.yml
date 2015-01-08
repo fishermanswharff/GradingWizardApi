@@ -1,0 +1,17 @@
+language: ruby
+rvm:
+- 2.2.0
+script:
+- bundle exec rspec spec
+before_script:
+- cp config/database.yml.travis config/database.yml
+- psql -c 'create database travis_ci_test' -U postgres
+deploy:
+  provider: heroku
+  app: gradingwizard
+  api_key:
+    secure: QQCQXZWK8cPY+CSMYXz0utXSp7TsFRuqbEyFur3D2IEauGoE5obIuaxh0MJNcsCo+sm3XebphrCaTlocjy68Kzw8ghEg8TGnPZv/Mb+yaF0j3avA1FqzWpMSnApOEdW24ZU7a5wsGPpTGuI9LmD4o++yeeZax2EfKxmyGpMyKrg=
+  run:
+  - rake db:migrate
+  - rake db:seed
+  - restart
