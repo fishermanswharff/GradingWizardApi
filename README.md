@@ -1,9 +1,6 @@
 ![General Assembly Logo](docs/img/GeneralAssembly_logo.png)
 
 # Todo list:
-* fix caching on production
-* fix production error 500 internal server error
-* new pull_request model
 * implement build artifacts post to AWS S3
 
 # Grading Wizard
