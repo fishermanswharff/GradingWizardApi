@@ -7,15 +7,6 @@ before_script:
 - gem install travis-artifacts
 - cp config/database.yml.travis config/database.yml
 - psql -c 'create database travis_ci_test' -U postgres
-deploy:
-  provider: heroku
-  app: gradingwizard
-  api_key:
-    secure: QQCQXZWK8cPY+CSMYXz0utXSp7TsFRuqbEyFur3D2IEauGoE5obIuaxh0MJNcsCo+sm3XebphrCaTlocjy68Kzw8ghEg8TGnPZv/Mb+yaF0j3avA1FqzWpMSnApOEdW24ZU7a5wsGPpTGuI9LmD4o++yeeZax2EfKxmyGpMyKrg=
-  run:
-  - rake db:migrate
-  - rake db:seed
-  - restart
 addons:
   artifacts:
     debug: true
@@ -24,3 +15,12 @@ addons:
       secure: WINimOmRSO8fDOAW2PCzbK+3WkrNIJ2BDnEmvf6HvVoy4/cVhnDnjWP64LLW/MB0yjOnjVPuMHdsHcbRmtlBzoM0Ea9Klb2x7XcdnFX9C+SImbSVlcz6+kfktl0vmGjK3pXUFAaArfU+/o7weoFsocw4ZaxTJpUjqY0rbwdTwIk=
     secret:
       secure: GQuZ/1ZcN8cgWmFkADAiglQuGru+sji5jamPNkXEYZIuUN1mCBvHu1Opw2w8T96xZwbMIbTJoauCJlYGLw98MP2kCaE/NL+DpKVrm2kt2MiO3+tcFl3bvTAMxHYjHzho4OCQ2BZDWpecGqYeRVP36UkrthONR2l5bAG2Y+gkpoc=
+deploy:
+  provider: heroku
+  app: gradingwizard
+  api_key:
+    secure: aJH/1UV5EtTtGbJzQzpa8oEz8a8EDFkr4yOYTSwjkA8sZscVueRufAalwBG/VOBlJF3hGCqwuUzqCVTS98LbuMvnA0GhhjGPK0wKoJpBkiNO1WX1WxXs1PjQa5JqRdbNweOyu2GjLmtOJ8P4yNjmGABObZeQOiGNxzztdULr3Q0=
+  run:
+  - rake db:migrate
+  - rake db:seed
+  - restart
