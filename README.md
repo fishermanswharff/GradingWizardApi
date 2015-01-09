@@ -1,3 +1,6 @@
+[![Build status][ci-image]][ci-url] 
+[![Code Climate][cc-climate-image]][cc-climate-url] 
+
 ![General Assembly Logo](docs/img/GeneralAssembly_logo.png)
 
 # Todo list for this API:
@@ -39,3 +42,10 @@ Bottom 3 Results:
 Student D, E, F
 
 Most common test failure: NAME OF RPSEC TEST
+
+
+[ci-image]: https://travis-ci.org/fishermanswharff/GradingWizardApi.svg?branch=master
+[ci-url]: https://travis-ci.org/fishermanswharff/GradingWizardApi
+
+[cc-climate-image]: https://codeclimate.com/github/fishermanswharff/GradingWizardApi/badges/gpa.svg
+[cc-climate-url]: https://codeclimate.com/github/fishermanswharff/GradingWizardApi
