@@ -1,5 +1,3 @@
-require 'byebug'
-
 class TravisController < ApplicationController
   skip_before_filter  :verify_authenticity_token
   
@@ -10,6 +8,7 @@ class TravisController < ApplicationController
       payload = JSON.parse(params[:payload])
       url = "https://github.com/" + repo_slug
       if payload['type'] == 'pull_request'
+        parent = Repo.where(name: payload["repository"]["name"])[0]
         # PullRequest.create!({committer_name: payload['committer_name'], unique_id: payload['id'], name: env['HTTP_TRAVIS_REPO_SLUG'], build_status: payload['status'], status_message: payload['status_message'], build_url: payload['build_url'], commit_message: payload['message'], pull_request_number: payload['pull_request_number']})
       end
     end
