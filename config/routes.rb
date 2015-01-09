@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
-  # root 'repos#index'
   match '/travisreports' => 'travis#nomnom', via: [:post]
-
   resources :repos
   resources :pull_requests
   

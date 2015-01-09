@@ -12,14 +12,6 @@ describe 'Repo',type: :model do
     expect(@repos.length).to eq 4
   end
 
-  it 'parses the number of pages of the response' do
-    
-  end
-
-  it 'gets all the pages of repos' do
-    
-  end
-
   it 'saves all the repos in the database' do
     expect(Repo.all.length).to eq 358
   end
