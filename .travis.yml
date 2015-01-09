@@ -23,3 +23,4 @@ addons:
     secret:
       secure: bbc6WeoXJ4U3u+jvOCfIV+BdGPXTVoseScGDKQfIoKgCLGDhoda9S5oqzf4U4maw/C5/LxdZbMqGpP7yWiw2Y67dZa3jzo7UfJbEStlaMl5e+Wg6RsM+ksymz9oPfhQE2BVsG1leziOPl3KbkddNni9GVYk5nty9v/LKxgniiOg=
     bucket: ga-wdi-travis-logs
+  postgresql: "9.3"
