@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get '/' => redirect('https://github.com/fishermanswharff/GradingWizardApi')
   match '/travisreports' => 'travis#nomnom', via: [:post]
   resources :repos
   resources :pull_requests

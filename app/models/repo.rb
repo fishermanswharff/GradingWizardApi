@@ -18,7 +18,7 @@ class Repo < ActiveRecord::Base
     end
     repos[:pages].map { |page|  
       page.map { |repo|
-        Repo.create!({name: repo[:name], url: repo[:html_url], github_id: repo[:id], github_data: repo.to_json})
+        Repo.find_by(name: repo[:name]).nil? ? Repo.create!({name: repo[:name], url: repo[:html_url], github_id: repo[:id], github_data: repo.to_json}) : break
       }
     }
     # Rails.cache.fetch([:ga_repos,self], expires_in: 1.second) do
