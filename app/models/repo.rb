@@ -24,7 +24,7 @@ class Repo < ActiveRecord::Base
         end
       }
     }
-    # Rails.cache.fetch([:ga_repos,self], expires_in: 1.second) do
+    # Rails.cache.fetch([:ga_repos,self], expires_in: 5.minutes) do
     # end
   end
 end
