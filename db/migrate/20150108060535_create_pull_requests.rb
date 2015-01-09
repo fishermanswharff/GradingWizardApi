@@ -9,6 +9,7 @@ class CreatePullRequests < ActiveRecord::Migration
       t.string :commit_message
       t.integer :pull_request_number
       t.string :committer_name
+      t.belongs_to :repo
       t.timestamps
     end
   end

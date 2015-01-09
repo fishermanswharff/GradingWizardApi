@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20150108060535) do
     t.string   "commit_message"
     t.integer  "pull_request_number"
     t.string   "committer_name"
+    t.integer  "repo_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -32,8 +33,11 @@ ActiveRecord::Schema.define(version: 20150108060535) do
   create_table "repos", force: :cascade do |t|
     t.string   "name"
     t.string   "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "pull_requests_count"
+    t.integer  "github_id"
+    t.json     "github_data"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
 end
