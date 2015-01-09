@@ -4,7 +4,6 @@ class CreateRepos < ActiveRecord::Migration
       t.string :name, unique: true
       t.string :url, unique: true
       t.integer :pull_requests_count
-      t.integer :github_id, unique: true
       t.json :github_data, unique: true
       t.timestamps null:false
     end

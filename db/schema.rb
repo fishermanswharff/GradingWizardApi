@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 20150108060535) do
     t.string   "name"
     t.string   "url"
     t.integer  "pull_requests_count"
-    t.integer  "github_id"
     t.json     "github_data"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
