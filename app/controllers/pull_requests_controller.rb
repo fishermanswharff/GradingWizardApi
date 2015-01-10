@@ -1,6 +1,4 @@
-require 'byebug'
 class PullRequestsController < ApplicationController
-
   def index
     @pull_requests = PullRequest.where(repo_id: params[:repo_id])
     render json: @pull_requests, status: 200

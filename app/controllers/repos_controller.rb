@@ -1,4 +1,3 @@
-require 'byebug'
 class ReposController < ApplicationController
   before_filter :get_repos, only: :index
 
