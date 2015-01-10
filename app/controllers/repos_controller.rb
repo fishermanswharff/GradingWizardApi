@@ -3,7 +3,7 @@ class ReposController < ApplicationController
 
   def index
     params["name"].nil? ? @repos = Repo.all : @repos = Repo.where(name: params["name"])
-    render json: @repos, status: 200
+    render json: @repos, include: 'pull_requests', status: 200
   end
 
   private

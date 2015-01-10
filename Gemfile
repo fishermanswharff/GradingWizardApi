@@ -7,6 +7,7 @@ gem 'newrelic_rpm'
 gem 'rack-cors'
 gem 'redis-rails'
 gem "octokit", "~> 3.0"
+gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
 
 group :development do
   gem 'spring'
