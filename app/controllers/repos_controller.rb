@@ -6,6 +6,11 @@ class ReposController < ApplicationController
     render json: @repos, include: 'pull_requests', status: 200
   end
 
+  def show
+    @repo = Repo.find(params[:id])
+    render json: @repo, status: 200
+  end
+
   private
   def get_repos
     Repo.github_repos

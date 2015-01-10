@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'rails_helper'
+require 'pry'
 
 describe 'Pull Requests Api endpoint' do
 
@@ -16,7 +17,7 @@ describe 'Pull Requests Api endpoint' do
       expect(response.status).to eq 200
       prs = JSON.parse(response.body)
       expect(prs.length).to eq 1
-      expect(prs.first["repo_id"]).to eq @repo.id
+      expect(prs[0]["repo"]["id"]).to eq @repo.id
     end
   end
 

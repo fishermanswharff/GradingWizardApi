@@ -6,8 +6,7 @@
 # Todo list for this API:
 * test for repo model and controller
 * test for pull request model and repo
-* serializer for repos
-* serializer for pull_requests
+* show method for repos_controller
 * email controller
 * email view
 

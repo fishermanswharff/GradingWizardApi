@@ -6,6 +6,7 @@ describe 'Repo Api endpoint' do
   before(:all) do
     Repo.delete_all
     PullRequest.delete_all
+    @repos = Repo.github_repos
   end
 
   describe '#index' do
@@ -22,6 +23,15 @@ describe 'Repo Api endpoint' do
       repos = JSON.parse(response.body)
       expect(repos.length).to eq 1
       expect(repos[0]["name"]).to eq "wdi_1_ruby_demo_basics"
+    end
+  end
+
+  describe '#show' do
+    it 'gets a repo' do
+      get "/repos/#{@repos[0][0].id}"
+      expect(response.status).to eq 200
+      repo = JSON.parse(response.body)
+      expect(repo["name"]).to eq "algorithms"
     end
   end
 end
