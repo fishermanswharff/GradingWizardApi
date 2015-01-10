@@ -1,5 +1,8 @@
 [![Build status][ci-image]][ci-url] 
 [![Code Climate][cc-climate-image]][cc-climate-url] 
+[![Test Coverage][cc-cov-image]][cc-cov-url]
+
+
 
 ![General Assembly Logo](docs/img/GeneralAssembly_logo.png)
 
@@ -46,3 +49,6 @@ Most common test failure: NAME OF RPSEC TEST
 
 [cc-climate-image]: https://codeclimate.com/github/fishermanswharff/GradingWizardApi/badges/gpa.svg
 [cc-climate-url]: https://codeclimate.com/github/fishermanswharff/GradingWizardApi
+
+[cc-cov-image]: https://codeclimate.com/github/fishermanswharff/GradingWizardApi/badges/coverage.svg
+[cc-cov-url]: https://codeclimate.com/github/fishermanswharff/GradingWizardApi
