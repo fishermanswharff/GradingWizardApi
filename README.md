@@ -51,16 +51,20 @@ has a sole purpose: to receive Travis CI webhooks on automated builds, compile t
 
 email with: 
 
-TITLE: Results of wdi_1_ruby_quiz_whatever
-BODY:
+Subject: Results of ${wdi_repo_name}
+Body: 
 
-Number of tests: 5
+Number of tests built with Travis-CI: 5
 Average score: 3.2
 
+\[Results of the builds\]
+
+```ruby
           |
   |   |   |
 | | | | | | 
 0 1 2 3 4 5
+```
 
 Top 3 Results:
 
