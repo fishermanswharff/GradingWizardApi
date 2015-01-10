@@ -1,7 +1,7 @@
 class CreatePullRequests < ActiveRecord::Migration
   def change
     create_table :pull_requests do |t|
-      t.integer :travis_uuid, unique: true, null: false
+      t.integer :travis_identifier, unique: true, null: false
       t.string :name
       t.integer :build_status
       t.string :status_message
