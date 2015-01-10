@@ -4,9 +4,8 @@
 ![General Assembly Logo](docs/img/GeneralAssembly_logo.png)
 
 # Todo list for this API:
-* test for repo model and controller
-* test for pull request model and repo
-* show method for repos_controller
+* update readme with endpoint behavior
+* update readme with how to use
 * email controller
 * email view
 

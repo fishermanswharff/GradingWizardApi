@@ -2,6 +2,8 @@ language: ruby
 rvm:
 - 2.2.0
 script:
+- CODECLIMATE_REPO_TOKEN=3ff20cc22e00f7a1df41c56cabed56fe12a8a17f67a74a2165e92b2cd59573ce 
+  bundle exec rake
 - bundle exec rspec spec
 before_script:
 - cp config/database.yml.travis config/database.yml
