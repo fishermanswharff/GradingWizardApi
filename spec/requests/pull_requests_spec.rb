@@ -4,99 +4,20 @@ require 'rails_helper'
 describe 'Pull Requests Api endpoint' do
 
   before(:all) do
-    Repo.create({name: "wdi_1_ruby_demo_basics", url: "https://github.com/ga-wdi-boston/wdi_1_ruby_demo_basics"})
+    @repo = Repo.create!({name: "wdi_1_ruby_demo_basics", url: "https://github.com/ga-wdi-boston/wdi_1_ruby_demo_basics"})
+    @pull_request = PullRequest.create!({repo_id: @repo.id, committer_name: "fishermanswharff", travis_uuid: 46232633, name: "ga-wdi-boston/wdi_1_ruby_demo_basics", build_status: 0, status_message: "success", build_url: "http://travis-ci.org", commit_message: "yo, this is my commit message bitches", pull_request_number: 1})
   end
 
   describe '#index' do
-    it 'get''s all the pull_requests' do
-      get '/pull_requests'
+    it 'get''s all the pull_requests from a single repo' do
+      get "/repos/#{@repo.id}/pull_requests"
       expect(response.status).to eq 200
       prs = JSON.parse(response.body)
       expect(prs.length).to eq 1
+      expect(prs.first["repo_id"]).to eq @repo.id
     end
   end
 
   describe '#create' do
-    it 'receives the travis webook, checks for authenticity, and adds the pull request onto the repo' do
-      post '/travisreports',
-      {
-        payload: {
-          "id"=>46232633, 
-          "repository"=>
-            {
-              "id"=>2228655, 
-              "name"=>"wdi_1_ruby_demo_basics", 
-              "owner_name"=>"ga-wdi-boston", 
-              "url"=>nil
-            }, 
-          "number"=>"20", 
-          "config"=>
-            {
-              "language"=>"ruby", 
-              "rvm"=>["2.2.0"], 
-              "script"=>"bundle exec rspec spec", 
-              "notifications"=>{"webhooks"=>"http://4d126c4b.ngrok.com/travisreports"}, 
-              ".result"=>"configured", 
-              "os"=>"linux"
-            }, 
-          "status"=>1, 
-          "result"=>1, 
-          "status_message"=>"Broken", 
-          "result_message"=>"Broken", 
-          "started_at"=>"2015-01-07T19:37:30Z", 
-          "finished_at"=>"2015-01-07T19:37:43Z", 
-          "duration"=>13, 
-          "build_url"=>"https://travis-ci.org/ga-wdi-boston/wdi_1_ruby_demo_basics/builds/46232633", 
-          "commit"=>"a86c98d745c396a9d314d6491931a62fc290c5f3", 
-          "branch"=>"master", 
-          "message"=>"gitignore", 
-          "compare_url"=>"https://github.com/ga-wdi-boston/wdi_1_ruby_demo_basics/pull/1", 
-          "committed_at"=>"2015-01-07T19:35:40Z", 
-          "author_name"=>"fishermanswharff", 
-          "author_email"=>"fishermanswharff@github.com", 
-          "committer_name"=>"fishermanswharff", 
-          "committer_email"=>"fishermanswharff@github.com", 
-          "matrix"=>
-            [
-              {
-                "id"=>46232634, 
-                "repository_id"=>2228655, 
-                "parent_id"=>46232633, 
-                "number"=>"20.1", 
-                "state"=>"finished", 
-                "config"=>
-                  {
-                    "language"=>"ruby", 
-                    "rvm"=>"2.2.0", 
-                    "script"=>"bundle exec rspec spec", 
-                    "notifications"=>
-                      {"webhooks"=>"http://4d126c4b.ngrok.com/travisreports"}, 
-                    ".result"=>"configured", 
-                    "os"=>"linux"
-                  }, 
-                "status"=>1, 
-                "result"=>1, 
-                "commit"=>"a86c98d745c396a9d314d6491931a62fc290c5f3", 
-                "branch"=>"master", 
-                "message"=>"gitignore", 
-                "compare_url"=>"https://github.com/ga-wdi-boston/wdi_1_ruby_demo_basics/pull/1", 
-                "committed_at"=>"2015-01-07T19:35:40Z", 
-                "author_name"=>"fishermanswharff", 
-                "author_email"=>"fishermanswharff@github.com", 
-                "committer_name"=>"fishermanswharff", 
-                "committer_email"=>"fishermanswharff@github.com", 
-                "finished_at"=>"2015-01-07T19:37:43Z"
-              }
-            ], 
-          "type"=>"pull_request", 
-          "pull_request_number"=>1
-        }.to_json
-      },
-      { "HTTP_TRAVIS_REPO_SLUG" => "ga-wdi-boston/wdi_1_ruby_demo_basics","HTTP_AUTHORIZATION" => "955cfd9f992d2725c1f6f81f8446b529f688792bd2b874ca2a38802fde4126d1" }
-      expect(response.status).to eq 200
-      pull_request = JSON.parse(response.body)
-      expect(pull_request["id"]).to eq 46232633
-      expect(pull_request["parent"]["name"]).to eq "wdi_1_ruby_demo_basics"
-    end
   end
 end
