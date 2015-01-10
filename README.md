@@ -21,7 +21,7 @@ has a sole purpose: to receive Travis CI webhooks on automated builds, compile t
 
 # API endpoint behavior
 * `GET '/repos'` will force a query for all GA WDI Boston public repos, and save unique repos. 
-* Travis CI webhooks posting to `https://gradingwizard.herokuapp.com/travisreports` will be received by `travis#nomnom` and will parse the Travis build to check if it's a pull request or just a regular push. 
+* Travis CI webhooks `POST`'ing to `https://gradingwizard.herokuapp.com/travisreports` will be received by `travis#nomnom` and will parse the Travis build to check if it's a pull request or just a regular push. 
 * A pull request will be saved to the matching parent repo. 
 * Subsequent requests on repos will include that repo's travis-build pull requests. For instance, `GET '/repos/72'` will return this json: 
 
