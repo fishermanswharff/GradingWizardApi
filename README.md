@@ -4,11 +4,6 @@
 ![General Assembly Logo](docs/img/GeneralAssembly_logo.png)
 
 # Todo list for this API:
-* new migrations
-* update git ignore
-* config env files
-* config initializers
-* routes
 * test for repo model and controller
 * test for pull request model and repo
 
