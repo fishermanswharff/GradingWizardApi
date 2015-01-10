@@ -47,7 +47,7 @@ has a sole purpose: to receive Travis CI webhooks on automated builds, compile t
 }
 ```
 
-## Example Result
+## Example of future expectation for reporting:<br>
 
 email with: 
 
