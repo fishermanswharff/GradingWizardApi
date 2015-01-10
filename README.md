@@ -12,12 +12,40 @@
 * email controller
 * email view
 
-# Todo list for repo config:
+# Todo list for repo config to build with travis:
 * output logs from rspec
 * config build artifacts post to AWS S3
 
 # Grading Wizard
 has a sole purpose: to receive Travis CI webhooks on automated builds, compile the results from repositories and produce an aggregated result of the builds from forks and master branches.
+
+# API endpoint behavior
+* `GET '/repos'` will force a query for all GA WDI Boston public repos, and save unique repos. 
+* Travis CI webhooks posting to `https://gradingwizard.herokuapp.com/travisreports` will be received by `travis#nomnom` and will parse the Travis build to check if it's a pull request or just a regular push. 
+* A pull request will be saved to the matching parent repo. 
+* Subsequent requests on repos will include that repo's travis-build pull requests. For instance, `GET '/repos/72'` will return this json: 
+
+```json
+{
+  "id":72,
+  "name":"wdi_1_ruby_demo_basics",
+  "url":"https://github.com/ga-wdi-boston/wdi_1_ruby_demo_basics",
+  "pull_requests_count":1,
+  "pull_requests":
+  [
+    {
+      "travis_identifier":46572831,
+      "name":"ga-wdi-boston/wdi_1_ruby_demo_basics",
+      "build_status":0,
+      "status_message":"Passed",
+      "build_url":"https://travis-ci.org/ga-wdi-boston/wdi_1_ruby_demo_basics/builds/46572831",
+      "commit_message":"travis file with prod url on pull_request",
+      "committer_name":"fishermanswharff",
+      "pull_request_number":1
+    }
+  ]
+}
+```
 
 ## Example Result
 
