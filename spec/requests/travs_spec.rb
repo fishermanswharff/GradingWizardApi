@@ -4,6 +4,9 @@ require 'rails_helper'
 describe 'Travis Controller' do
 
   before(:all) do
+    Repo.delete_all
+    PullRequest.delete_all
+    
     @repo = Repo.create({name: "wdi_1_ruby_demo_basics", url: "https://github.com/ga-wdi-boston/wdi_1_ruby_demo_basics"})
   end
 

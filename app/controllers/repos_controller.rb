@@ -3,8 +3,7 @@ class ReposController < ApplicationController
   before_filter :get_repos, only: :index
 
   def index
-    @repos = Repo.all
-    
+    params["name"].nil? ? @repos = Repo.all : @repos = Repo.where(name: params["name"])
     render json: @repos, status: 200
   end
 
