@@ -1,14 +1,23 @@
 require 'spec_helper'
 require 'rails_helper'
 
-describe 'Travis Controller' do
+describe 'Pull Requests Api endpoint' do
 
   before(:all) do
-    @repo = Repo.create({name: "wdi_1_ruby_demo_basics", url: "https://github.com/ga-wdi-boston/wdi_1_ruby_demo_basics"})
+    Repo.create({name: "wdi_1_ruby_demo_basics", url: "https://github.com/ga-wdi-boston/wdi_1_ruby_demo_basics"})
   end
 
-  describe 'nomnom' do
-    it 'receives a post from the travis webhook and creates a new PullRequest instance' do
+  describe '#index' do
+    it 'get''s all the pull_requests' do
+      get '/pull_requests'
+      expect(response.status).to eq 200
+      prs = JSON.parse(response.body)
+      expect(prs.length).to eq 1
+    end
+  end
+
+  describe '#create' do
+    it 'receives the travis webook, checks for authenticity, and adds the pull request onto the repo' do
       post '/travisreports',
       {
         payload: {
@@ -84,11 +93,10 @@ describe 'Travis Controller' do
         }.to_json
       },
       { "HTTP_TRAVIS_REPO_SLUG" => "ga-wdi-boston/wdi_1_ruby_demo_basics","HTTP_AUTHORIZATION" => "955cfd9f992d2725c1f6f81f8446b529f688792bd2b874ca2a38802fde4126d1" }
-      expect(response.status).to eq 201
-      payload = JSON.parse(response.body)
-      expect(payload["id"]).to eq 46232633
-      expect(payload["parent"]["name"]).to eq "wdi_1_ruby_demo_basics"
-      expect(PullRequest.where(travis_uuid: payload["id"])).to_not eq []
+      expect(response.status).to eq 200
+      pull_request = JSON.parse(response.body)
+      expect(pull_request["id"]).to eq 46232633
+      expect(pull_request["parent"]["name"]).to eq "wdi_1_ruby_demo_basics"
     end
   end
 end

@@ -19,7 +19,7 @@ class Repo < ActiveRecord::Base
       repos[:pages].map { |page|  
         page.map { |repo|
           if Repo.all.length > 0
-            Repo.find_by(name: repo[:name]).nil? ? Repo.create!({name: repo[:name], url: repo[:html_url], github_data: repo.to_json}) : break
+            Repo.create!({name: repo[:name], url: repo[:html_url], github_data: repo.to_json}) if Repo.find_by(name: repo[:name]).nil? 
           else
             Repo.create!({name: repo[:name], url: repo[:html_url], github_data: repo.to_json})
           end

@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20150108060535) do
   enable_extension "plpgsql"
 
   create_table "pull_requests", force: :cascade do |t|
-    t.integer  "unique_id",           null: false
+    t.integer  "travis_uuid",         null: false
     t.string   "name"
     t.integer  "build_status"
     t.string   "status_message"
