@@ -15,7 +15,7 @@ class PullRequestsController < ApplicationController
 
   private
   def pull_request_params
-    params.require(:pull_request).permit(:travis_uuid,:name,:build_status,:status_message,:build_url,:commit_message,:pull_request_number,:committer_name,:repo_id)
+    params.require(:pull_request).permit(:travis_identifier,:name,:build_status,:status_message,:build_url,:commit_message,:pull_request_number,:committer_name,:repo_id)
   end
 
 end

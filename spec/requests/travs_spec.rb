@@ -91,7 +91,7 @@ describe 'Travis Controller' do
       payload = JSON.parse(response.body)
       expect(payload["id"]).to eq 46232633
       expect(payload["parent"]["name"]).to eq "wdi_1_ruby_demo_basics"
-      expect(PullRequest.where(travis_uuid: payload["id"])).to_not eq []
+      expect(PullRequest.where(travis_identifier: payload["id"])).to_not eq []
     end
   end
 end

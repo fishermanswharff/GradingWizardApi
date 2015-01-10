@@ -7,7 +7,7 @@ describe 'Pull Requests Api endpoint' do
     Repo.delete_all
     PullRequest.delete_all
     @repo = Repo.create!({name: "wdi_1_ruby_demo_basics", url: "https://github.com/ga-wdi-boston/wdi_1_ruby_demo_basics"})
-    @pull_request = PullRequest.create!({repo_id: @repo.id, committer_name: "fishermanswharff", travis_uuid: 46232633, name: "ga-wdi-boston/wdi_1_ruby_demo_basics", build_status: 0, status_message: "success", build_url: "http://travis-ci.org", commit_message: "yo, this is my commit message bitches", pull_request_number: 1})
+    @pull_request = PullRequest.create!({repo_id: @repo.id, committer_name: "fishermanswharff", travis_identifier: 46232633, name: "ga-wdi-boston/wdi_1_ruby_demo_basics", build_status: 0, status_message: "success", build_url: "http://travis-ci.org", commit_message: "yo, this is my commit message bitches", pull_request_number: 1})
   end
 
   describe '#index' do
