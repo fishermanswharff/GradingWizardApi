@@ -23,4 +23,7 @@ addons:
     secret:
       secure: bbc6WeoXJ4U3u+jvOCfIV+BdGPXTVoseScGDKQfIoKgCLGDhoda9S5oqzf4U4maw/C5/LxdZbMqGpP7yWiw2Y67dZa3jzo7UfJbEStlaMl5e+Wg6RsM+ksymz9oPfhQE2BVsG1leziOPl3KbkddNni9GVYk5nty9v/LKxgniiOg=
     bucket: ga-wdi-travis-logs
-  postgresql: "9.3"
+  postgresql: '9.3'
+env:
+  global:
+    secure: VQ4Qzgodc7fR1n7CIH7Nt746g3iR5OpaIJ8GwMXv4QboDqjGnjPq+AMtZfwgySLXO/D5WtRo7QZduOkgpVZtRGNJ97mlXKSUAK8GEvKBVMoVi+4efN6f8/PVnKbpfO2W5SNj5kg06GQh3SySpGngqi/MJS/hXqIRPhuDXdaQKcc=

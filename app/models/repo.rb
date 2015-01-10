@@ -3,7 +3,7 @@ class Repo < ActiveRecord::Base
   has_many :pull_requests
 
   def self.github_repos
-    # Rails.cache.fetch([:ga_repos,self], expires_in: 5.minutes) do
+    Rails.cache.fetch([:ga_repos,self], expires_in: 5.minutes) do
       repos = {}
       repos[:pages] = []
       client = Octokit::Client.new(:access_token => ENV['GITHUB_TOKEN'])
@@ -25,6 +25,6 @@ class Repo < ActiveRecord::Base
           end
         }
       }
-    # end
+    end
   end
 end
