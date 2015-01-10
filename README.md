@@ -51,13 +51,13 @@ has a sole purpose: to receive Travis CI webhooks on automated builds, compile t
 
 email with: 
 
-Subject: Results of ${wdi_repo_name}
-Body: 
+Subject: Results of ${wdi_repo_name}<br>
+Body: <br>
 
-Number of tests built with Travis-CI: 5
-Average score: 3.2
+Number of tests built with Travis-CI: 5<br>
+Average score: 3.2<br>
 
-\[Results of the builds\]
+\[Results of the builds\]<br>
 
 ```ruby
           |
