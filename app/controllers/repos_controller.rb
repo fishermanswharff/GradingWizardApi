@@ -2,7 +2,7 @@ class ReposController < ApplicationController
   before_filter :get_repos, only: :index
 
   def index
-    params["name"].nil? ? @repos = Repo.all : @repos = Repo.where(name: params["name"])
+    params["name"].nil? ? @repos = Repo.all.includes(:pull_requests) : @repos = Repo.where(name: params["name"]).includes(:pull_requests)
     render json: @repos, include: 'pull_requests', status: 200
   end
 

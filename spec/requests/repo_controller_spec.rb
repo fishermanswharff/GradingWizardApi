@@ -4,6 +4,7 @@ require 'rails_helper'
 describe 'Repo Api endpoint' do
 
   before(:all) do
+    Rails.cache.clear
     Repo.delete_all
     PullRequest.delete_all
     @repos = Repo.github_repos
@@ -14,7 +15,7 @@ describe 'Repo Api endpoint' do
       get '/repos'
       expect(response.status).to eq 200
       repos = JSON.parse(response.body)
-      expect(repos.length).to eq 358
+      expect(repos.length).to eq 394
     end
 
     it 'gets the repos by parameters' do

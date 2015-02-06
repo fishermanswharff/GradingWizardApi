@@ -1,0 +1,1 @@
+while read line; do git clone "$line"; done < urls.txt

@@ -1,3 +1,5 @@
+require "#{Rails.root}/lib/modules/URLStripper"
+
 class Repo < ActiveRecord::Base
   validates :name, :url, presence: true
   has_many :pull_requests
@@ -16,15 +18,21 @@ class Repo < ActiveRecord::Base
         repos[:pages] << last_response.data
         break if last_response.rels[:next].nil?
       end
-      repos[:pages].map { |page|  
+      repos[:pages].map { |page|
         page.map { |repo|
           if Repo.all.length > 0
-            Repo.create!({name: repo[:name], url: repo[:html_url], github_data: repo.to_json}) if Repo.find_by(name: repo[:name]).nil? 
+            Repo.create!({name: repo[:name], url: repo[:html_url], github_data: repo.to_json}) if Repo.find_by(name: repo[:name]).nil?
           else
             Repo.create!({name: repo[:name], url: repo[:html_url], github_data: repo.to_json})
           end
         }
       }
     end
+  end
+
+  def self.ssh_urls
+    json = URLStripper::WDI::get_json
+    array = URLStripper::WDI::get_ssh_urls(json)
+    URLStripper::WDI::output_to_file(array)
   end
 end

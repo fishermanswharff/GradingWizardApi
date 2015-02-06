@@ -13,11 +13,11 @@ describe 'Repo',type: :model do
   end
 
   it 'saves all the repos in the database' do
-    expect(Repo.all.length).to eq 358
+    expect(Repo.all.length).to eq 394
   end
 
   it 'only adds unique repos' do
     more_repos = Repo.github_repos
-    expect(Repo.all.length).to eq 358
+    expect(Repo.all.length).to eq 394
   end
 end
